@@ -1,13 +1,17 @@
 # EXAMPLE install-and-run:
 
 > $ python install.py ../backups/lblrtm/17.02.25/ aer
+
 > $ python createModel.py
+
 > $ python readTAPE5lblrtm.py models/maunakea/TAPE5_lblrtm
+
 > $ python plot.py models/maunakea/TAPE30_maunakea 
 
 # install.py: extract and compile AER's LNFL and LBLRTM
 
 > $ python install.py AER-tars-dir source-dir build-dir, or
+
 > $ python install.py AER-tars-dir source-and-build-dir
 
 - where AER-tars-dir contains aer_lblrtm_v12.X_lnfl_v3.X.tar.gz and aer_v_3.X.tar.gz
@@ -16,6 +20,7 @@
 # run.py: run LNFL and/or LBLRTM, when there is a TAPE5_lnfl and TAPE5_lblrtm to use
 
 > $ python run.py --lblrtm model-dir, run only LBLRTM to produce model
+
 > $ python run.py --lnfl model-dir, run only LNFL to produce linefile for LBLRTM
 
 ### supported by:
