@@ -6,7 +6,7 @@
 
 > $ python readTAPE5lblrtm.py models/maunakea/TAPE5_lblrtm
 
-> $ python plot.py models/maunakea/TAPE30_maunakea 
+> $ python plotSpectrum.py models/maunakea/TAPE30_maunakea 
 
 # install.py: extract and compile AER's LNFL and LBLRTM
 
