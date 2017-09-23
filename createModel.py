@@ -27,6 +27,8 @@ if __name__ == "__main__":
     wn2 = 590.0
     angle = 66.6
     alt = 4.205
+    # mol array specifies abundance multiplier against MIPAS datasets.
+    # names : ["H2O","CO2","O3","N2O","CO","CH4","O2","NO","SO2","NO2","NH3","HNO3","ClO","OCS","HOCl","N2","HCN","H2O2","C2H2","C2H6","COF2","SF6","ClONO2"]
     mols = [.45,.5,1.,.4,1.,1.,.5,1.,1.,1.,1.,1.,1.,1.,1.,1.,1.,1.,1.,1.,1.,1.,1.]
     
     if not os.path.exists(runDir+'/'+runName+'/'+'TAPE1'):
