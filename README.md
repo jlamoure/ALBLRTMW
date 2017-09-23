@@ -1,6 +1,6 @@
 # EXAMPLE install-and-run:
 
-> $ python install.py ../backups/lblrtm/17.02.25/ aer
+> $ python install.py path-to-aer-tars/ aer
 
 > $ python createModel.py
 
