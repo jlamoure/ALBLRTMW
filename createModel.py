@@ -35,6 +35,6 @@ if __name__ == "__main__":
         # using TAPE5, create a line file for the LBLRTM, link to with TAPE1
         run.createLineList(buildDir,runDir+'/'+runName+'/',runName)
     # generate a TAPE5 with params for LBLRTM
-    lblrtm.writeTAPE5lblrtm("with convolution",runDir+'/'+runName+'/',wn1,wn2,angle,alt,mols, convolution=True)
+    lblrtm.writeTAPE5lblrtm("with convolution",runDir+'/'+runName+'/',wn1,wn2,angle,alt,mols, convolution=True,hwhm=.02)
     # run the LBLRTM using TAPE5
     run.runLBLRTM(buildDir,runDir+'/'+runName+'/',runName)

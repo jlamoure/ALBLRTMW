@@ -1,5 +1,4 @@
 import os, subprocess, shutil, sys
-import plot # this is plot.py
 import argparse
 
 def fixLineListLinks(buildDir,runDir):

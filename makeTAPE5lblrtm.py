@@ -921,7 +921,7 @@ SF6 = np.array([ #  [ppmv]
 ## BEGIN FUNCTIONS
 ##
 
-def writeTAPE5lblrtm(runDescription,runDir,wn1,wn2,angle,alt,mols,convolution=True):
+def writeTAPE5lblrtm(runDescription,runDir,wn1,wn2,angle,alt,mols,convolution=True,hwhm=None):
 
     if len(mols) is not 23:
         print("specify exactly 23 molecule ratios")
@@ -1017,7 +1017,8 @@ $ '+runDescription+'\n\
     #       6: FOV correction using left edge of box
     JFN = 2
     # half width half max parameter for convolution step (ISCAN = 1)
-    hwhm = .02
+    if convolution and (hwhm is None):
+        hwhm = .02
     
     # JEMIT  JPLOT  plot content            plot name
     # 0      0      transmission            TAPE30
@@ -1078,7 +1079,7 @@ $ Convolution with SCANFN\n\
 -1.\n\
 $ Transfer to ASCII plotting data\n\
  HI=0 F4=0 CN=0 AE=0 EM=0 SC=0 FI=0 PL=1 TS=0 AM=0MG=0  LA=0 OD=0 XS=00   0    0    0    0\n\
-7-8um_41000ft_030515UTC15_lat50_elev23_zenh2o7p3u\n'+
+                                                 \n'+
 ('%10s'%wn1)+('%10s'%wn2)+'   10.2000  100.0000    0    0   11    0    1.0000 0  0    0\n\
    0.0000    1.2000    7.0200    0.2000    4    0    1     '+('%1s'%JEMIT)+'    '+('%1s'%JPLOT)+'   0 0    4 '+('%3s'%JPLTFL)+'\n\
 -1.\n')
@@ -1097,7 +1098,7 @@ $ Convolution with SCANFN\n\
 -1.\n\
 $ Transfer to ASCII plotting data\n\
  HI=0 F4=0 CN=0 AE=0 EM=0 SC=0 FI=0 PL=1 TS=0 AM=0MG=0  LA=0 OD=0 XS=00   0    0    0    0\n\
-7-8um_41000ft_030515UTC15_lat50_elev23_zenh2o7p3u\n'+
+                                                 \n'+
 ('%10s'%wn1)+('%10s'%wn2)+'   10.2000  100.0000    0    0   11    0    1.0000 0  0    0\n\
    0.0000    1.2000    7.0200    0.2000    4    0    1     '+('%1s'%JEMIT)+'    '+('%1s'%JPLOT)+'   0 0    4 '+('%3s'%JPLTFL)+'\n\
 -1.\n\
@@ -1110,7 +1111,7 @@ $ Transfer to ASCII plotting data\n\
 -1.\n\
 $ Transfer to ASCII plotting data\n\
  HI=0 F4=0 CN=0 AE=0 EM=0 SC=0 FI=0 PL=1 TS=0 AM=0MG=0  LA=0 OD=0 XS=00   0    0    0    0\n\
-7-8um_41000ft_030515UTC15_lat50_elev23_zenh2o7p3u\n'+
+                                                 \n'+
 ('%10s'%wn1)+('%10s'%wn2)+'   10.2000  100.0000    0    0   11    0    1.0000 0  0    0\n\
    0.0000    1.2000    7.0200    0.2000    4    0    1     0    0   0 0    4  30\n'+
 ('%10s'%wn1)+('%10s'%wn2)+'   10.2000  100.0000    0    0   11    0    1.0000 0  0    0\n\
